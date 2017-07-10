@@ -1,6 +1,7 @@
 {
   "extends": "ezze",
   "env": {
+    "node": true,
     "mocha": true
   }
 }
