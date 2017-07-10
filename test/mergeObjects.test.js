@@ -4,11 +4,14 @@ chai.should();
 import mergeObjects from '../src/mergeObjects';
 
 describe('merge objects', () => {
-    it('test 1', () => {
+    const src = {
+        merge: 'object',
+        obj: {
+            nested: true
+        }
+    };
 
-    });
-
-    it('test 2', () => {
-
+    it('empty destination object', () => {
+        mergeObjects(src, {}).should.be.deep.equal(src);
     });
 });

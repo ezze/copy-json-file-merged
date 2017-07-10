@@ -6,6 +6,7 @@ import keys from 'lodash/keys';
 import uniq from 'lodash/uniq';
 
 export default function mergeObjects(src, dest, options) {
+    options = options || {};
     const mergeKey = options.mergeKey || 'id';
     const overwrite = options.overwrite || false;
 
