@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import path from 'path';
-import minimist from 'minimist';
+var path = require('path');
+var minimist = require('minimist');
 
-import copyJsonFileMerged from '../lib/copyJsonFileMerged';
+var copyJsonFileMerged = require('../lib/copyJsonFileMerged');
 
 const argv = minimist(process.argv.slice(2));
 const src = path.resolve(argv.src);
