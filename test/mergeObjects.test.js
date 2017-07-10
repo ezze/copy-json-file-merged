@@ -102,6 +102,24 @@ describe('merge objects', () => {
         });
     });
 
+    it('overwite non-empty destination array', () => {
+        mergeObjects(srcArr, destArr, {
+            overwrite: true
+        }).should.be.deep.equal([{
+            id: 1,
+            nested: false,
+            newField: 'dest'
+        }, {
+            id: 2,
+            merge: 'array',
+            user: {
+                name: 'none'
+            }
+        }, {
+            key: 2
+        }]);
+    });
+
     it('overwrite only specified section of non-empty destination object', () => {
         mergeObjects(srcObj, destObj, {
             overwrite: ['obj']
