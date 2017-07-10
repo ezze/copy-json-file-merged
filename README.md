@@ -1,5 +1,6 @@
 # copy-json-file-merged
 
+[![npm version](https://badge.fury.io/js/copy-json-file-merged.svg)](https://badge.fury.io/js/copy-json-file-merged)
 [![Build Status](https://travis-ci.org/ezze/copy-json-file-merged.svg?branch=master)](https://travis-ci.org/ezze/copy-json-file-merged)
 [![Coverage Status](https://coveralls.io/repos/github/ezze/copy-json-file-merged/badge.svg?branch=dev)](https://coveralls.io/github/ezze/copy-json-file-merged?branch=dev)
 
