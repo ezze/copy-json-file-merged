@@ -1,3 +1,6 @@
 .idea
+coverage
+dist
 lib
-*log
+node_modules
+*.log
