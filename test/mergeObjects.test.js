@@ -19,6 +19,9 @@ describe('merge objects', () => {
             id: 1,
             nested: false,
             newField: 'dest'
+        },
+        user: {
+            name: 'none'
         }
     };
 
@@ -28,6 +31,19 @@ describe('merge objects', () => {
     }, {
         id: 2,
         merge: 'array'
+    }];
+
+    const destArr = [{
+        id: 1,
+        nested: true,
+        newField: 'dest'
+    }, {
+        id: 2,
+        user: {
+            name: 'none'
+        }
+    }, {
+        key: 2
     }];
 
     it('empty destination object', () => {
@@ -46,8 +62,27 @@ describe('merge objects', () => {
                 nested: false,
                 newField: 'dest'
             },
-            key: 2
+            key: 2,
+            user: {
+                name: 'none'
+            }
         });
+    });
+
+    it('non-empty destination array', () => {
+        mergeObjects(srcArr, destArr).should.be.deep.equal([{
+            id: 1,
+            nested: true,
+            newField: 'dest'
+        }, {
+            id: 2,
+            merge: 'array',
+            user: {
+                name: 'none'
+            }
+        }, {
+            key: 2
+        }]);
     });
 
     it('overwrite non-empty destination object', () => {
@@ -60,7 +95,10 @@ describe('merge objects', () => {
                 nested: true,
                 newField: 'dest'
             },
-            key: 2
+            key: 2,
+            user: {
+                name: 'none'
+            }
         });
     });
 
@@ -74,7 +112,10 @@ describe('merge objects', () => {
                 nested: true,
                 newField: 'dest'
             },
-            key: 2
+            key: 2,
+            user: {
+                name: 'none'
+            }
         });
     });
 });
