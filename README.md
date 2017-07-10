@@ -17,7 +17,7 @@ In code:
 
 ```javascript
 var copyJsonFileMerged = require('copy-json-file-merged');
-copyJsonFileMerged('src/file.json', 'dest/file.json', {
+copyJsonFileMerged('src.json', 'dest.json', {
     overwrite: true,
     mergeKey: 'id'
 });
@@ -26,7 +26,7 @@ copyJsonFileMerged('src/file.json', 'dest/file.json', {
 From CLI:
 
 ```bash
-./node_modules/.bin/copy-json-file-merged src/file.json dest/file.json --overwrite --mergeKey id
+./node_modules/.bin/copy-json-file-merged src.json dest.json --overwrite --mergeKey id
 ```
 
 From package.json's [scripts](https://docs.npmjs.com/misc/scripts):
@@ -34,10 +34,46 @@ From package.json's [scripts](https://docs.npmjs.com/misc/scripts):
 ```json
 {
   "scripts": {
-    "copy": "copy-json-file-merged src/file.json dest/file.json --overwrite --mergeKey id"
+    "copy": "copy-json-file-merged src.json dest.json --overwrite --mergeKey id"
   }
 }
 ```
+
+## API
+
+`copyJsonFileMerged` function accepts three arguments:
+
+- `src` — path to source JSON file (must exist);
+- `dest` — path to destination JSON file (can exist);
+- `options` — object of properties (optional):
+    - `mergeKey` — a key (property) to merge nested objects and arrays by (see
+    [merge arrays uniting their object items by specified identifier field](https://github.com/ezze/merge-professor#examples)),
+    by default is `id`;
+    - `overwrite` — shows whether source object should overwrite destination one (if it exists),
+    by default is `false`; alternatively, an array of top-level properties' names of source JSON object can be passed
+    to limit sections of destination JSON file to overwrite, e.g.:
+    
+        **src.json**
+        ```json
+        {
+          "obj1": { "merged": true },
+          "obj2": { "merged": true }
+        }
+        ```
+        
+        **dest.json**
+        ```json
+        {
+          "obj1": { "merged": false },
+          "obj2": { "merged": false }
+        }
+        ```
+    
+        ```javascript
+        copyJsonFileMerged('src.json', 'dest.json', {
+            overwrite: ['obj1']
+        }); // => { "obj1": { "merged": true }, "obj2": { "merged": false } }
+        ```
 
 ## Building
 
