@@ -2,9 +2,17 @@
   "name": "copy-json-file-merged",
   "version": "0.1.0",
   "description": "Copies source JSON file and merges its contents with destination JSON file if present.",
-  "main": "index.js",
+  "main": "lib/copyJsonFileMerged.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf lib dist",
+    "build": "npm run transpile",
+    "rebuild": "npm run clean && npm run build",
+    "transpile": "babel src -d lib",
+    "lint": "eslint ./src",
+    "lint:test": "eslint -c .eslintrc.test.json ./test",
+    "test": "mocha --recursive --require babel-register test",
+    "test:coverage": "istanbul cover _mocha -- --recursive --require babel-register test && cat ./coverage/lcov.info | coveralls",
+    "prepublish": "npm run lint && npm test && npm run rebuild"
   },
   "repository": {
     "type": "git",
@@ -13,12 +21,34 @@
   "keywords": [
     "copy",
     "merge",
-    "json"
+    "json",
+    "file"
   ],
   "author": "Dmitriy Pushkov <ezze@ezze.org>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ezze/copy-json-file-merged/issues"
   },
-  "homepage": "https://github.com/ezze/copy-json-file-merged#readme"
+  "homepage": "https://github.com/ezze/copy-json-file-merged#readme",
+  "dependencies": {
+    "jsonfile": "^3.0.1",
+    "lodash": "^4.17.4",
+    "merge-professor": "^1.0.5",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "eslint": "^4.2.0",
+    "eslint-config-ezze": "0.1.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.3.0",
+    "rimraf": "^2.6.1"
+  }
 }
