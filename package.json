@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Copies source JSON file and merges its contents with destination JSON file if present.",
   "main": "lib/copyJsonFileMerged.js",
+  "bin": "bin/copyJsonFileMerged.js",
   "scripts": {
     "clean": "rimraf lib dist",
     "build": "npm run transpile",
