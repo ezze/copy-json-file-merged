@@ -1,0 +1,24 @@
+{
+  "name": "copy-json-file-merged",
+  "version": "0.1.0",
+  "description": "Copies source JSON file and merges its contents with destination JSON file if present.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezze/copy-json-file-merged.git"
+  },
+  "keywords": [
+    "copy",
+    "merge",
+    "json"
+  ],
+  "author": "Dmitriy Pushkov <ezze@ezze.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezze/copy-json-file-merged/issues"
+  },
+  "homepage": "https://github.com/ezze/copy-json-file-merged#readme"
+}
