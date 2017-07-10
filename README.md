@@ -13,23 +13,53 @@ npm install copy-json-file-merged --save
 
 ## Usage
 
-TODO
+In code:
+
+```javascript
+var copyJsonFileMerged = require('copy-json-file-merged');
+copyJsonFileMerged('src/file.json', 'dest/file.json', {
+    overwrite: true,
+    mergeKey: 'id'
+});
+```
+
+From CLI:
+
+```bash
+./node_modules/.bin/copy-json-file-merged src/file.json dest/file.json --overwrite --mergeKey id
+```
+
+From package.json's [scripts](https://docs.npmjs.com/misc/scripts):
+
+```json
+{
+  "scripts": {
+    "copy": "copy-json-file-merged src/file.json dest/file.json --overwrite --mergeKey id"
+  }
+}
+```
 
 ## Building
 
 In order to build library run:
-                                          
-    npm run build
+
+```bash
+npm run build
+```
     
 ## Testing
     
 Run unit tests:
-    
-    npm test
+
+```bash
+npm test
+```
     
 In order to run tests with [Coveralls](http://coveralls.io) locally you have to provide `COVERALLS_REPO_TOKEN`:
         
-    COVERALLS_REPO_TOKEN=<token> npm run test:coverage
+```bash
+COVERALLS_REPO_TOKEN=<token> npm run test:coverage
+```
     
 ## Contribution
     
