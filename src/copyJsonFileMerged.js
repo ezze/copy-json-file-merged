@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import jsonfile from 'jsonfile';
+import mkdirp from 'mkdirp';
 
 import mergeObjects from './mergeObjects';
 
@@ -38,6 +39,12 @@ export default function copyJsonFileMerged(src, dest, options) {
     }
 
     const json = mergeObjects(srcJson, destJson, options);
+
+    const destDirPath = path.dirname(destPath);
+    if (!fs.existsSync(destDirPath) || !fs.statSync(destDirPath).isDirectory()) {
+        mkdirp.sync(destDirPath);
+    }
+
     jsonfile.writeFileSync(destPath, json, {
         spaces: 2
     });

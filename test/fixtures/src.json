@@ -1,0 +1,8 @@
+{
+  "merge": "object",
+  "obj": {
+    "id": 1,
+    "nested": true
+  },
+  "key": 2
+}
