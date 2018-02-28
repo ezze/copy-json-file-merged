@@ -1,6 +1,6 @@
 {
   "name": "copy-json-file-merged",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Copies source JSON file and merges its contents with destination JSON file if present.",
   "main": "lib/copyJsonFileMerged.js",
   "bin": "bin/copyJsonFileMerged.js",
