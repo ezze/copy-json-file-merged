@@ -1,13 +1,15 @@
 language: node_js
 node_js:
+  - "9"
+  - "8"
+  - "7"
   - "6"
   - "5"
   - "4"
 branches:
   only:
     - master
-    - dev
-    - /^greenkeeper/.*$/
+    - develop
 install:
   - npm install
 before_script:
@@ -17,4 +19,4 @@ before_script:
 script:
   - npm run build
 after_success:
-  - npm run test:coverage
+  - npm run test:coveralls

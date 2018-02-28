@@ -2,8 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/copy-json-file-merged.svg)](https://badge.fury.io/js/copy-json-file-merged)
 [![Build Status](https://travis-ci.org/ezze/copy-json-file-merged.svg?branch=master)](https://travis-ci.org/ezze/copy-json-file-merged)
-[![Coverage Status](https://coveralls.io/repos/github/ezze/copy-json-file-merged/badge.svg?branch=dev)](https://coveralls.io/github/ezze/copy-json-file-merged?branch=dev)
-[![Greenkeeper badge](https://badges.greenkeeper.io/ezze/copy-json-file-merged.svg)](https://greenkeeper.io/)
+[![Coverage Status](https://coveralls.io/repos/github/ezze/copy-json-file-merged/badge.svg?branch=develop)](https://coveralls.io/github/ezze/copy-json-file-merged?branch=develop)
 
 Copies source JSON file and merges its contents with destination JSON file if present.
 
@@ -93,15 +92,21 @@ Run unit tests:
 npm test
 ```
     
+In order to run tests with coverage run the following command:
+
+```bash
+npm run test:coverage
+```
+    
 In order to run tests with [Coveralls](http://coveralls.io) locally you have to provide `COVERALLS_REPO_TOKEN`:
         
 ```bash
-COVERALLS_REPO_TOKEN=<token> npm run test:coverage
+COVERALLS_REPO_TOKEN=<token> npm run test:coveralls
 ```
     
 ## Contribution
     
-Before making a pull request, please, be sure that your changes are rebased to `dev` branch.
+Before making a pull request, please, be sure that your changes are rebased to `develop` branch.
 
 ## License
 
