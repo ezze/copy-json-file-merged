@@ -18,7 +18,7 @@ export default function copyJsonFileMerged(src, dest, options) {
     }
     catch (e) {
         console.error('Unable to parse source JSON file.');
-        console.error(e);
+        console.error(e.message);
         return false;
     }
 
@@ -33,7 +33,7 @@ export default function copyJsonFileMerged(src, dest, options) {
         }
         catch (e) {
             console.error('Unable to parse destination JSON file.');
-            console.error(e);
+            console.error(e.message);
             return false;
         }
     }

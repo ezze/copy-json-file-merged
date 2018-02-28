@@ -1,5 +1,10 @@
 ## Changelog
 
+### 0.2.1 (2018-02-28)
+
+- Libraries are upgraded.
+- More Node.js versions are added to Travis CI config.
+
 ### 0.2.0 (2017-08-07)
 
 - Writing destination JSON file to non-existing directory is supported.
